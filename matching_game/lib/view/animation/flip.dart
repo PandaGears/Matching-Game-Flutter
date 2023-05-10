@@ -34,7 +34,7 @@ class _FlipAnimationState extends State<FlipAnimation>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: const Duration(milliseconds: 2600), vsync: this)
+        duration: const Duration(milliseconds: 1500), vsync: this)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           widget.animationComplete.call(true);
@@ -83,7 +83,7 @@ class _FlipAnimationState extends State<FlipAnimation>
             child: _controller.value >= 0.50
                 ? widget.card
                 : Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(
                                 "https://res.cloudinary.com/dzzk7cezp/image/upload/v1683639838/CardGame/cover_iskzvc.png"))),

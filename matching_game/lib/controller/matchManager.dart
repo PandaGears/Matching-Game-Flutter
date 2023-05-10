@@ -12,8 +12,8 @@ class MatchController extends ChangeNotifier {
 
   void cardSelected({required int index, required PlayingCard card}) {
     ignoreGesture = true;
-    if(tappedCards.length <= 1) {
-    tappedCards.addEntries([MapEntry(index, card)]);
+    if (tappedCards.length <= 1) {
+      tappedCards.addEntries([MapEntry(index, card)]);
       canFlip = true;
     } else {
       canFlip = false;
@@ -21,15 +21,15 @@ class MatchController extends ChangeNotifier {
     notifyListeners();
   }
 
-  onAnimationCompleted({ required bool isFacingFront }) {
+  onAnimationCompleted({required bool isFacingFront}) {
     if (tappedCards.length == 2) {
       if (isFacingFront) {
-        if (containsAny(tappedCards.entries.elementAt(0).value.text, tappedCards.entries.elementAt(1).value.text) 
-       ) {
-        correctGuesses.addAll(tappedCards.keys);
-        if(correctGuesses.length == 26) {
-          complete = true;
-        }
+        if (containsAny(tappedCards.entries.elementAt(0).value.text,
+            tappedCards.entries.elementAt(1).value.text)) {
+          correctGuesses.addAll(tappedCards.keys);
+          if (correctGuesses.length == 26) {
+            complete = true;
+          }
           tappedCards.clear();
           canFlip = true;
           ignoreGesture = false;
@@ -40,17 +40,21 @@ class MatchController extends ChangeNotifier {
         reverseFlip = false;
         tappedCards.clear();
         ignoreGesture = false;
-
       }
     } else {
       canFlip = false;
       ignoreGesture = false;
-
     }
     notifyListeners();
   }
 
   bool containsAny(String text, String substring) {
-    return text.contains(substring) ?  true : false;
+    if (text.contains(substring)) {
+      return true;
+    } else if (substring.contains(text)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
