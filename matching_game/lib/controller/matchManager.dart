@@ -49,9 +49,7 @@ class MatchController extends ChangeNotifier {
   }
 
   bool containsAny(String text, String substring) {
-    if (text.contains(substring)) {
-      return true;
-    } else if (substring.contains(text)) {
+    if (text.contains(substring) || substring.contains(text)) {
       return true;
     } else {
       return false;
