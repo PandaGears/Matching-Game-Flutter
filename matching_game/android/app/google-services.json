@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1073074818472",
+    "project_id": "matchier-game",
+    "storage_bucket": "matchier-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073074818472:android:18d1e23cba4045113e219d",
+        "android_client_info": {
+          "package_name": "com.example.matching_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073074818472-nnornkrnr57dcs8bt09s4073peqf8apa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeRnI_sJh2V05MTPF7gh5VOgPiBG2u4gg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073074818472-nnornkrnr57dcs8bt09s4073peqf8apa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
